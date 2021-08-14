@@ -297,7 +297,7 @@ class FantiaDownloader:
         server_filename = os.path.basename(url_path)
         filename = os.path.basename(filepath)
         if use_server_filename:
-            filepath = os.path.join(os.path.dirname(filepath), server_filename)
+            filepath = os.path.join(os.path.dirname(filepath), os.path.splitext(os.path.basename(filepath))[0] + " - " + server_filename)
 
         # Check if filename is in exclusion list
         if server_filename in self.exclusions:
